@@ -83,6 +83,10 @@ def append_info_to_payload(payload)
 end
 ```
 
+## Monitoring
+
+Use a performance monitoring service like [New Relic](http://newrelic.com/) or [AppSignal](https://appsignal.com/).
+
 ## Web Server
 
 Use a high performance web server like [Unicorn](http://unicorn.bogomips.org/).
