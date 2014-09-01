@@ -83,6 +83,14 @@ def append_info_to_payload(payload)
 end
 ```
 
+## Web Server
+
+Use a high performance web server like [Unicorn](http://unicorn.bogomips.org/).
+
+```ruby
+gem 'unicorn'
+```
+
 ## Security
 
 Use SSL to protect your users. Add the following to `config/environments/production.rb`.
