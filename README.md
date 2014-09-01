@@ -1,5 +1,7 @@
 # Production Rails
 
+Best practices for running Rails in production
+
 ## Error Reporting
 
 Use an error reporting service like [Rollbar](https://rollbar.com/).
