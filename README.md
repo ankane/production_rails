@@ -83,7 +83,13 @@ def append_info_to_payload(payload)
 end
 ```
 
-## Monitoring
+## Uptime Monitoring
+
+Use an uptime monitoring service like [Pingdom](https://www.pingdom.com/) or [Uptime Robot](https://uptimerobot.com/).
+
+Monitor web servers, background jobs, and scheduled tasks.
+
+## Performance Monitoring
 
 Use a performance monitoring service like [New Relic](http://newrelic.com/) or [AppSignal](https://appsignal.com/).
 
