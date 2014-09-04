@@ -35,6 +35,19 @@ Add the following to `config/initializers/timeout.rb`.
 ```ruby
 Rack::Timeout.timeout = ENV["RACK_TIMEOUT"] || 5
 Rack::Timeout.unregister_state_change_observer(:logger)
+
+# hack to bubble timeout errors
+module ActionView
+  class Template
+
+    def handle_render_error_with_timeout(view, e)
+      raise e if e.is_a?(Rack::Timeout::Error)
+      handle_render_error_without_timeout(view, e)
+    end
+    alias_method_chain :handle_render_error, :timeout
+
+  end
+end
 ```
 
 Show a custom error page for timeouts. Add the following to `app/controllers/application_controller.rb`.
