@@ -118,6 +118,19 @@ def append_info_to_payload(payload)
 end
 ```
 
+## Slow Requests
+
+Keep track of slow requests
+
+```ruby
+ActiveSupport::Notifications.subscribe "process_action.action_controller" do |name, start, finish, id, payload|
+  duration = finish - start
+  if duration > 5.seconds
+    # track it
+  end
+end
+```
+
 ## Uptime Monitoring
 
 Use an uptime monitoring service like [Pingdom](https://www.pingdom.com/) or [Uptime Robot](https://uptimerobot.com/).
