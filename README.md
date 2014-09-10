@@ -76,7 +76,19 @@ Ensure database queries do not run for too long.
 For PostgreSQL, create an initializer with:
 
 ```ruby
-ActiveRecord::Base.connection.execute "set statement_timeout = 5000"
+module ActiveRecord
+  module ConnectionAdapters
+    class PostgreSQLAdapter
+
+      def configure_connection_with_statement_timeout
+        configure_connection_without_statement_timeout
+        execute("SET statement_timeout = 5000")
+      end
+      alias_method_chain :configure_connection, :statement_timeout
+
+    end
+  end
+end
 ```
 
 ## Logging
