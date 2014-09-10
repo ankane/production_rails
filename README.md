@@ -82,7 +82,9 @@ module ActiveRecord
 
       def configure_connection_with_statement_timeout
         configure_connection_without_statement_timeout
-        execute("SET statement_timeout = 5000")
+        ActiveRecord::Base.logger.silence do
+          execute("SET statement_timeout = 5000")
+        end
       end
       alias_method_chain :configure_connection, :statement_timeout
 
