@@ -69,6 +69,16 @@ end
 
 And create a `public/503.html`.
 
+## Database Timeouts
+
+Ensure database queries do not run for too long.
+
+For PostgreSQL, create an initializer with:
+
+```ruby
+ActiveRecord::Base.connection.execute "set statement_timeout = 5000"
+```
+
 ## Logging
 
 Use [Lograge](https://github.com/roidrage/lograge).
@@ -121,3 +131,7 @@ Use SSL to protect your users. Add the following to `config/environments/product
 ```ruby
 config.force_ssl = true
 ```
+
+## Thanks
+
+- [cant_wait gem](https://github.com/CarlosCD/cant_wait) for database timeouts
