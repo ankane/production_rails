@@ -155,6 +155,7 @@ Be sure to monitor:
 - requests by action - total time, count
 - queue time - `X-Request-Start` header
 - timeouts
+- 404s
 - errors - with affected users
 
 ### Background Jobs and Rake Tasks
