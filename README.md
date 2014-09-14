@@ -159,6 +159,12 @@ Use SSL to protect your users. Add the following to `config/environments/product
 config.force_ssl = true
 ```
 
+## TODO
+
+- Redis timeout
+- Elasticsearch timeout
+- Gemify parts
+
 ## Thanks
 
 - [cant_wait gem](https://github.com/CarlosCD/cant_wait) for database timeouts
