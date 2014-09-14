@@ -166,9 +166,13 @@ Be sure to monitor:
 
 - requests by type - total time, count
 - errors
-- latency
 - cpu
 - space
+
+### External Services
+
+- requests by type - total time, count
+- errors
 
 ### Other
 
