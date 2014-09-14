@@ -59,7 +59,9 @@ rescue_from Rack::Timeout::Error, with: :handle_request_timeout
 private
 
 def handle_request_timeout(e)
-  Rollbar.report_exception(e)
+  # track timeout
+  Rollbar.report_message_with_request("Timeout", "info", rollbar_request_data, rollbar_person_data)
+
   respond_to do |format|
     format.html { render file: Rails.root.join("public/503.html"), status: 503, layout: nil }
     format.all { head 503 }
