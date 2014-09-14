@@ -108,7 +108,9 @@ Add the following to `config/environments/production.rb`.
 ```ruby
 config.lograge.enabled = true
 config.lograge.custom_options = lambda do |event|
-  event.payload.slice(:user_id, :visit_id)
+  options = event.payload.slice(:user_id, :visit_id)
+  options[:params] = event.payload[:params].except("controller", "action")
+  options
 end
 ```
 
