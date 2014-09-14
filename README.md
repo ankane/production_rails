@@ -108,7 +108,7 @@ Add the following to `config/environments/production.rb`.
 ```ruby
 config.lograge.enabled = true
 config.lograge.custom_options = lambda do |event|
-  options = event.payload.slice(:user_id, :visit_id)
+  options = event.payload.slice(:request_id, :user_id, :visit_id)
   options[:params] = event.payload[:params].except("controller", "action")
   options
 end
@@ -119,6 +119,7 @@ Add the following to `app/controllers/application_controller.rb`.
 ```ruby
 def append_info_to_payload(payload)
   super
+  payload[:request_id] = request.uuid
   payload[:user_id] = current_user.id if current_user
   payload[:visit_id] = ahoy.visit_id # if you use Ahoy
 end
