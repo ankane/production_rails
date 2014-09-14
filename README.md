@@ -165,6 +165,10 @@ config.force_ssl = true
 
 - Redis timeout
 - Elasticsearch timeout
+- Background jobs
+- Scheduled jobs
+- Failed form submissions
+- Failed CSRF
 - Gemify parts
 
 ## Thanks
