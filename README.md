@@ -153,10 +153,13 @@ Be sure to monitor:
 ### Web Requests
 
 - requests by action - total time, count
+- errors - with affected users
 - queue time - `X-Request-Start` header
 - timeouts
 - 404s
-- errors - with affected users
+- invalid authenticity token
+- unpermitted parameters
+- invalid form submissions
 
 ### Background Jobs and Rake Tasks
 
@@ -174,12 +177,6 @@ Be sure to monitor:
 
 - requests by type - total time, count
 - errors
-
-### Other
-
-- invalid authenticity token
-- unpermitted parameters
-- invalid form submissions
 
 ## Web Server
 
