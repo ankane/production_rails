@@ -148,6 +148,34 @@ Monitor web servers, background jobs, and scheduled tasks.
 
 Use a performance monitoring service like [New Relic](http://newrelic.com/) or [AppSignal](https://appsignal.com/).
 
+Be sure to monitor:
+
+### Web Requests
+
+- requests by action - total time, count
+- queue time - `X-Request-Start` header
+- timeouts
+- errors - with affected users
+
+### Background Jobs and Rake Tasks
+
+- jobs by type - total time, count
+- errors
+
+### Data Stores - Database, Elasticsearch, Redis
+
+- requests by type - total time, count
+- errors
+- latency
+- cpu
+- space
+
+### Other
+
+- invalid authenticity token
+- unpermitted parameters
+- invalid form submissions
+
 ## Web Server
 
 Use a high performance web server like [Unicorn](http://unicorn.bogomips.org/).
