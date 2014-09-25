@@ -174,7 +174,7 @@ Be sure to monitor:
 
 - requests by type - total time, count
 - errors
-- CPU
+- CPU usage
 - space
 
 ### External Services
