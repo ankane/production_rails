@@ -110,6 +110,10 @@ config.lograge.enabled = true
 config.lograge.custom_options = lambda do |event|
   options = event.payload.slice(:request_id, :user_id, :visit_id)
   options[:params] = event.payload[:params].except("controller", "action")
+  # if you use Searchkick
+  if event.payload[:searchkick_runtime].to_f > 0
+    options[:search] = event.payload[:searchkick_runtime]
+  end
   options
 end
 ```
