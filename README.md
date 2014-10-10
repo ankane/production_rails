@@ -198,6 +198,19 @@ Use SSL to protect your users. Add the following to `config/environments/product
 config.force_ssl = true
 ```
 
+## Development Bonus
+
+[Fix double logging](https://github.com/rails/rails/issues/11415#issuecomment-57648388) in the Rails console. Create `config/initializers/log_once.rb` with:
+
+```ruby
+ActiveSupport::Logger.class_eval do
+  def self.broadcast(logger)
+    Module.new do
+    end
+  end
+end
+```
+
 ## TODO
 
 - Redis timeout
