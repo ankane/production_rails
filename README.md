@@ -2,24 +2,18 @@
 
 Best practices for running Rails in production
 
-## Error Reporting
+## Errors
 
 Use an error reporting service like [Rollbar](https://rollbar.com/).
 
+Also, track 400 and 500 status codes.
+
 ```ruby
-gem 'rollbar'
-```
-
-Run:
-
-```sh
-rails generate rollbar
-```
-
-And add the following to your environment.
-
-```sh
-ROLLBAR_ACCESS_TOKEN=test123
+ActiveSupport::Notifications.subscribe "process_action.action_controller" do |name, start, finish, id, payload|
+  if !payload[:status] or payload[:status].to_i >= 400
+    # track it
+  end
+end
 ```
 
 ## Timeouts
@@ -59,8 +53,7 @@ rescue_from Rack::Timeout::Error, with: :handle_request_timeout
 private
 
 def handle_request_timeout(e)
-  # track timeout
-  Rollbar.report_message_with_request("Timeout", "info", rollbar_request_data, rollbar_person_data)
+  # track here
 
   respond_to do |format|
     format.html { render file: Rails.root.join("public/503.html"), status: 503, layout: nil }
@@ -95,6 +88,60 @@ module ActiveRecord
 end
 ```
 
+## Slow Requests
+
+Keep track of slow requests
+
+```ruby
+ActiveSupport::Notifications.subscribe "process_action.action_controller" do |name, start, finish, id, payload|
+  duration = finish - start
+  if duration > 5.seconds
+    # track here
+  end
+end
+```
+
+## Unpermitted Parameters
+
+```ruby
+ActiveSupport::Notifications.subscribe "unpermitted_parameters.action_controller" do |name, start, finish, id, payload|
+  # track here
+end
+```
+
+## Failed Validations
+
+```ruby
+module TrackErrors
+  extend ActiveSupport::Concern
+
+  included do
+    after_validation :track_errors
+  end
+
+  def track_errors
+    if errors.any?
+      # track here
+    end
+  end
+end
+
+ActiveRecord::Base.send(:include, TrackErrors)
+```
+
+## Failed CSRF
+
+```ruby
+class ApplicationController < ActionController::Base
+  def handle_unverified_request_with_tracking(*args)
+    # track here
+
+    handle_unverified_request_without_tracking(*args)
+  end
+  alias_method_chain :handle_unverified_request, :tracking
+end
+```
+
 ## Logging
 
 Use [Lograge](https://github.com/roidrage/lograge).
@@ -126,19 +173,6 @@ def append_info_to_payload(payload)
   payload[:request_id] = request.uuid
   payload[:user_id] = current_user.id if current_user
   payload[:visit_id] = ahoy.visit_id # if you use Ahoy
-end
-```
-
-## Slow Requests
-
-Keep track of slow requests
-
-```ruby
-ActiveSupport::Notifications.subscribe "process_action.action_controller" do |name, start, finish, id, payload|
-  duration = finish - start
-  if duration > 5.seconds
-    # track it
-  end
 end
 ```
 
@@ -217,8 +251,6 @@ end
 - Elasticsearch timeout
 - Background jobs
 - Scheduled jobs
-- Failed form submissions
-- Failed CSRF
 - Gemify parts
 
 ## Thanks
