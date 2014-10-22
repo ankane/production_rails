@@ -18,74 +18,10 @@ end
 
 ## Timeouts
 
-Use [Rack Timeout](https://github.com/heroku/rack-timeout).
+Use [Slowpoke](https://github.com/ankane/slowpoke) for request and database timeouts.
 
 ```ruby
-gem 'rack-timeout', '>= 0.1.0beta3'
-```
-
-Add the following to `config/initializers/timeout.rb`.
-
-```ruby
-Rack::Timeout.timeout = ENV["RACK_TIMEOUT"] || 5
-Rack::Timeout.unregister_state_change_observer(:logger)
-
-# hack to bubble timeout errors
-module ActionView
-  class Template
-
-    def handle_render_error_with_timeout(view, e)
-      raise e if e.is_a?(Rack::Timeout::Error)
-      handle_render_error_without_timeout(view, e)
-    end
-    alias_method_chain :handle_render_error, :timeout
-
-  end
-end
-```
-
-Show a custom error page for timeouts. Add the following to `app/controllers/application_controller.rb`.
-
-```ruby
-# from https://github.com/heroku/rack-timeout/issues/40#issuecomment-51865104
-rescue_from Rack::Timeout::Error, with: :handle_request_timeout
-
-private
-
-def handle_request_timeout(e)
-  # track here
-
-  respond_to do |format|
-    format.html { render file: Rails.root.join("public/503.html"), status: 503, layout: nil }
-    format.all { head 503 }
-  end
-end
-```
-
-And create a `public/503.html`.
-
-## Database Timeouts
-
-Ensure database queries do not run for too long.
-
-For PostgreSQL, create an initializer with:
-
-```ruby
-module ActiveRecord
-  module ConnectionAdapters
-    class PostgreSQLAdapter
-
-      def configure_connection_with_statement_timeout
-        configure_connection_without_statement_timeout
-        ActiveRecord::Base.logger.silence do
-          execute("SET statement_timeout = 5000")
-        end
-      end
-      alias_method_chain :configure_connection, :statement_timeout
-
-    end
-  end
-end
+gem 'slowpoke'
 ```
 
 ## Slow Requests
