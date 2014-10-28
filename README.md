@@ -26,6 +26,10 @@ Use [Slowpoke](https://github.com/ankane/slowpoke) for request and database time
 gem 'slowpoke'
 ```
 
+## Throttling
+
+Use [Rack Attack](https://github.com/kickstarter/rack-attack) to throttle and block requests.
+
 ## Slow Requests
 
 Keep track of slow requests
