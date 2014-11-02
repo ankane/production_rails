@@ -30,6 +30,10 @@ gem 'slowpoke'
 
 Use [Rack Attack](https://github.com/kickstarter/rack-attack) to throttle and block requests.
 
+## Audits
+
+Use an auditing library like [Audited](https://github.com/collectiveidea/audited).
+
 ## Slow Requests
 
 Keep track of slow requests
