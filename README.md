@@ -191,12 +191,22 @@ ActiveSupport::Logger.class_eval do
 end
 ```
 
+## Scheduled Jobs
+
+[Whenever](https://github.com/javan/whenever) is a Ruby gem that provides a clear syntax for writing and deploying cron jobs. Example:
+```ruby
+every 3.hours do
+  runner "MyModel.some_process"
+  rake "my:rake:task"
+  command "/usr/bin/my_great_command"
+end
+```
+
 ## TODO
 
 - Redis timeout
 - Elasticsearch timeout
 - Background jobs
-- Scheduled jobs
 - Gemify parts
 
 ## Thanks
