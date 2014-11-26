@@ -130,7 +130,7 @@ Monitor web servers, background jobs, and scheduled tasks.
 
 ## Performance Monitoring
 
-Use a performance monitoring service like [New Relic](http://newrelic.com/) or [AppSignal](https://appsignal.com/).
+Use a performance monitoring service like [New Relic](http://newrelic.com/), [AppSignal](https://appsignal.com/) or [Skylight](https://www.skylight.io).
 
 Be sure to monitor:
 
