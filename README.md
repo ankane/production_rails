@@ -8,7 +8,7 @@ Use an error reporting service like [Rollbar](https://rollbar.com/).
 
 ## Timeouts
 
-Use [Slowpoke](https://github.com/ankane/slowpoke) for request and database timeouts.
+Use [Slowpoke](https://github.com/ankane/slowpoke) for request and database timeouts. :gem: *disclaimer: one of my gems*
 
 ## Throttling
 
@@ -94,7 +94,7 @@ Be sure to monitor:
 
 ## Additional Monitoring
 
-Use [Notable](https://github.com/ankane/notable) to track notable requests and background jobs.
+Use [Notable](https://github.com/ankane/notable) to track notable requests and background jobs. :gem: *disclaimer: one of my gems*
 
 - errors
 - slow requests, jobs, and timeouts
