@@ -2,29 +2,13 @@
 
 Best practices for running Rails in production
 
-**Gem coming soon!** [Get notified](http://chartkick.us7.list-manage.com/subscribe?u=952c861f99eb43084e0a49f98&id=6ea6541e8e&group[0][16]=true)
-
 ## Errors
 
 Use an error reporting service like [Rollbar](https://rollbar.com/).
 
-Also, track 400 and 500 status codes.
-
-```ruby
-ActiveSupport::Notifications.subscribe "process_action.action_controller" do |name, start, finish, id, payload|
-  if !payload[:status] or payload[:status].to_i >= 400
-    # track it
-  end
-end
-```
-
 ## Timeouts
 
 Use [Slowpoke](https://github.com/ankane/slowpoke) for request and database timeouts.
-
-```ruby
-gem 'slowpoke'
-```
 
 ## Throttling
 
@@ -33,60 +17,6 @@ Use [Rack Attack](https://github.com/kickstarter/rack-attack) to throttle and bl
 ## Audits
 
 Use an auditing library like [Audited](https://github.com/collectiveidea/audited).
-
-## Slow Requests
-
-Keep track of slow requests
-
-```ruby
-ActiveSupport::Notifications.subscribe "process_action.action_controller" do |name, start, finish, id, payload|
-  duration = finish - start
-  if duration > 5.seconds
-    # track here
-  end
-end
-```
-
-## Unpermitted Parameters
-
-```ruby
-ActiveSupport::Notifications.subscribe "unpermitted_parameters.action_controller" do |name, start, finish, id, payload|
-  # track here
-end
-```
-
-## Failed Validations
-
-```ruby
-module TrackErrors
-  extend ActiveSupport::Concern
-
-  included do
-    after_validation :track_errors
-  end
-
-  def track_errors
-    if errors.any?
-      # track here
-    end
-  end
-end
-
-ActiveRecord::Base.send(:include, TrackErrors)
-```
-
-## Failed CSRF
-
-```ruby
-class ApplicationController < ActionController::Base
-  def handle_unverified_request_with_tracking(*args)
-    # track here
-
-    handle_unverified_request_without_tracking(*args)
-  end
-  alias_method_chain :handle_unverified_request, :tracking
-end
-```
 
 ## Logging
 
@@ -162,6 +92,18 @@ Be sure to monitor:
 - requests by type - total time, count
 - errors
 
+## Additional Monitoring
+
+Use [Notable](https://github.com/ankane/notable) to track notable requests and background jobs.
+
+- errors
+- slow requests, jobs, and timeouts
+- 404s
+- validation failures
+- CSRF failures
+- unpermitted parameters
+- blocked and throttled requests
+
 ## Web Server
 
 Use a high performance web server like [Unicorn](http://unicorn.bogomips.org/).
@@ -197,7 +139,6 @@ end
 - Elasticsearch timeout
 - Background jobs
 - Scheduled jobs
-- Gemify parts
 
 ## Thanks
 
