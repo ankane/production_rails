@@ -67,30 +67,21 @@ Be sure to monitor:
 ### Web Requests
 
 - requests by action - total time, count
-- errors - with affected users
 - queue time - `X-Request-Start` header
-- timeouts
-- 404s
-- invalid authenticity token
-- unpermitted parameters
-- invalid form submissions
 
 ### Background Jobs and Rake Tasks
 
 - jobs by type - total time, count
-- errors
 
 ### Data Stores - Database, Elasticsearch, Redis
 
 - requests by type - total time, count
-- errors
 - CPU usage
 - space
 
 ### External Services
 
 - requests by type - total time, count
-- errors
 
 ## Additional Monitoring
 
