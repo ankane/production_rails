@@ -2,6 +2,10 @@
 
 Best practices for running Rails in production
 
+## Security
+
+Everyone writing code must be responsible for security. [Best practices](https://github.com/ankane/shorts/blob/master/Secure-Rails.md)
+
 ## Errors
 
 Use an error reporting service like [Rollbar](https://rollbar.com/).
@@ -101,14 +105,6 @@ Use a high performance web server like [Unicorn](http://unicorn.bogomips.org/).
 
 ```ruby
 gem 'unicorn'
-```
-
-## Security
-
-Use SSL to protect your users. Add the following to `config/environments/production.rb`.
-
-```ruby
-config.force_ssl = true
 ```
 
 ## Development Bonus
