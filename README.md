@@ -44,6 +44,40 @@ def append_info_to_payload(payload)
 end
 ```
 
+## Audits
+
+Use an auditing library like [Audited](https://github.com/collectiveidea/audited).
+
+## Monitoring
+
+- There are [two important metrics](https://github.com/ankane/shorts/blob/master/Two-Metrics.md) to track for web servers
+- Use an error reporting service like [Rollbar](https://rollbar.com/)
+- Use an uptime monitoring service like [Pingdom](https://www.pingdom.com/) or [Uptime Robot](https://uptimerobot.com/) - monitor web servers, background jobs, and scheduled tasks
+- Use a performance monitoring service like [New Relic](http://newrelic.com/) or [AppSignal](https://appsignal.com/)
+
+### What to Monitor
+
+##### Web Requests
+
+- requests by action - total time, count
+- queue time - X-Request-Start header
+
+##### Background Jobs and Rake Tasks
+
+- jobs by type - total time, count
+
+##### Data Stores - Database, Elasticsearch, Redis
+
+- requests by type - total time, count
+- CPU usage
+- space
+
+##### External Services
+
+- requests by type - total time, count
+
+### Notable Events
+
 Use [Notable](https://github.com/ankane/notable) to track notable requests and background jobs. :gem:
 
 - errors
@@ -54,59 +88,14 @@ Use [Notable](https://github.com/ankane/notable) to track notable requests and b
 - unpermitted parameters
 - blocked and throttled requests
 
-## Audits
-
-Use an auditing library like [Audited](https://github.com/collectiveidea/audited).
-
-## Monitoring
-
-### Web Server
-
-There are [two important metrics](https://github.com/ankane/shorts/blob/master/Two-Metrics.md) to track.
-
-### Errors
-
-Use an error reporting service like [Rollbar](https://rollbar.com/).
-
-### Uptime
-
-Use an uptime monitoring service like [Pingdom](https://www.pingdom.com/) or [Uptime Robot](https://uptimerobot.com/).
-
-Monitor web servers, background jobs, and scheduled tasks.
-
-### Performance
-
-Use a performance monitoring service like [New Relic](http://newrelic.com/) or [AppSignal](https://appsignal.com/).
-
-Be sure to monitor:
-
-#### Web Requests
-
-- requests by action - total time, count
-- queue time - `X-Request-Start` header
-
-#### Background Jobs and Rake Tasks
-
-- jobs by type - total time, count
-
-#### Data Stores - Database, Elasticsearch, Redis
-
-- requests by type - total time, count
-- CPU usage
-- space
-
-#### External Services
-
-- requests by type - total time, count
-
 ## Timeouts
 
 Use [Slowpoke](https://github.com/ankane/slowpoke) for request and database timeouts. :gem:
 
 ## Performance
 
-- Use a high performance web server like [Unicorn](http://unicorn.bogomips.org/).
-- Add [Oj](https://github.com/ohler55/oj) to speed up JSON parsing.
+- Use a high performance web server like [Unicorn](http://unicorn.bogomips.org/)
+- Add [Oj](https://github.com/ohler55/oj) to speed up JSON parsing
 
 ## Development Bonus
 
