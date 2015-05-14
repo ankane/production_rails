@@ -1,26 +1,18 @@
 # Production Rails
 
-Best practices for running Rails in production
+Best practices for running Rails in production.
+
+*Disclaimer: :gem: = one of my gems*
 
 ## Security
 
 Everyone writing code must be responsible for security. [Best practices](https://github.com/ankane/shorts/blob/master/Secure-Rails.md)
 
-## Errors
+## Analytics
 
-Use an error reporting service like [Rollbar](https://rollbar.com/).
+Use an analytics service like [Google Analytics](http://www.google.com/analytics/) or [Mixpanel](https://mixpanel.com/).
 
-## Timeouts
-
-Use [Slowpoke](https://github.com/ankane/slowpoke) for request and database timeouts. :gem: *disclaimer: one of my gems*
-
-## Throttling
-
-Use [Rack Attack](https://github.com/kickstarter/rack-attack) to throttle and block requests.
-
-## Audits
-
-Use an auditing library like [Audited](https://github.com/collectiveidea/audited).
+And possibly an open source library like [Ahoy](https://github.com/ankane/ahoy). :gem:
 
 ## Logging
 
@@ -37,10 +29,6 @@ config.lograge.enabled = true
 config.lograge.custom_options = lambda do |event|
   options = event.payload.slice(:request_id, :user_id, :visit_id)
   options[:params] = event.payload[:params].except("controller", "action")
-  # if you use Searchkick
-  if event.payload[:searchkick_runtime].to_f > 0
-    options[:search] = event.payload[:searchkick_runtime]
-  end
   options
 end
 ```
@@ -56,40 +44,7 @@ def append_info_to_payload(payload)
 end
 ```
 
-## Uptime Monitoring
-
-Use an uptime monitoring service like [Pingdom](https://www.pingdom.com/) or [Uptime Robot](https://uptimerobot.com/).
-
-Monitor web servers, background jobs, and scheduled tasks.
-
-## Performance Monitoring
-
-Use a performance monitoring service like [New Relic](http://newrelic.com/) or [AppSignal](https://appsignal.com/).
-
-Be sure to monitor:
-
-### Web Requests
-
-- requests by action - total time, count
-- queue time - `X-Request-Start` header
-
-### Background Jobs and Rake Tasks
-
-- jobs by type - total time, count
-
-### Data Stores - Database, Elasticsearch, Redis
-
-- requests by type - total time, count
-- CPU usage
-- space
-
-### External Services
-
-- requests by type - total time, count
-
-## Additional Monitoring
-
-Use [Notable](https://github.com/ankane/notable) to track notable requests and background jobs. :gem: *disclaimer: one of my gems*
+Use [Notable](https://github.com/ankane/notable) to track notable requests and background jobs. :gem:
 
 - errors
 - slow requests, jobs, and timeouts
@@ -99,13 +54,59 @@ Use [Notable](https://github.com/ankane/notable) to track notable requests and b
 - unpermitted parameters
 - blocked and throttled requests
 
-## Web Server
+## Audits
 
-Use a high performance web server like [Unicorn](http://unicorn.bogomips.org/).
+Use an auditing library like [Audited](https://github.com/collectiveidea/audited).
 
-```ruby
-gem 'unicorn'
-```
+## Monitoring
+
+### Web Server
+
+There are [two important metrics](https://github.com/ankane/shorts/blob/master/Two-Metrics.md) to track.
+
+### Errors
+
+Use an error reporting service like [Rollbar](https://rollbar.com/).
+
+### Uptime
+
+Use an uptime monitoring service like [Pingdom](https://www.pingdom.com/) or [Uptime Robot](https://uptimerobot.com/).
+
+Monitor web servers, background jobs, and scheduled tasks.
+
+### Performance
+
+Use a performance monitoring service like [New Relic](http://newrelic.com/) or [AppSignal](https://appsignal.com/).
+
+Be sure to monitor:
+
+#### Web Requests
+
+- requests by action - total time, count
+- queue time - `X-Request-Start` header
+
+#### Background Jobs and Rake Tasks
+
+- jobs by type - total time, count
+
+#### Data Stores - Database, Elasticsearch, Redis
+
+- requests by type - total time, count
+- CPU usage
+- space
+
+#### External Services
+
+- requests by type - total time, count
+
+## Timeouts
+
+Use [Slowpoke](https://github.com/ankane/slowpoke) for request and database timeouts. :gem:
+
+## Performance
+
+- Use a high performance web server like [Unicorn](http://unicorn.bogomips.org/).
+- Add [Oj](https://github.com/ohler55/oj) to speed up JSON parsing.
 
 ## Development Bonus
 
@@ -119,14 +120,3 @@ ActiveSupport::Logger.class_eval do
   end
 end
 ```
-
-## TODO
-
-- Redis timeout
-- Elasticsearch timeout
-- Background jobs
-- Scheduled jobs
-
-## Thanks
-
-- [cant_wait gem](https://github.com/CarlosCD/cant_wait) for database timeouts
