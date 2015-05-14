@@ -109,3 +109,7 @@ ActiveSupport::Logger.class_eval do
   end
 end
 ```
+
+## Lastly...
+
+Have suggestions? [Let me know](https://github.com/ankane/production_rails/issues/new)
