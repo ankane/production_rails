@@ -2,11 +2,11 @@
 
 Best practices for running Rails in production.
 
-*Disclaimer: :gem: = one of my gems*
+Disclaimer: :gem: indicates one of my gems
 
 ## Security
 
-Everyone writing code must be responsible for security. [Best practices](https://github.com/ankane/shorts/blob/master/Secure-Rails.md)
+Everyone writing code must be responsible for security. [Best practices](https://github.com/ankane/secure_rails)
 
 ## Analytics
 
