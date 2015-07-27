@@ -90,6 +90,8 @@ Use [Notable](https://github.com/ankane/notable) to track notable requests and b
 
 ## Timeouts
 
+[Add timeouts](https://github.com/ankane/ruby-timeouts) to all network requests.
+
 Use [Slowpoke](https://github.com/ankane/slowpoke) for request and database timeouts. :gem:
 
 ## Performance
