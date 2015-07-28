@@ -119,4 +119,4 @@ end
 
 ## Lastly...
 
-Have suggestions? [Let me know](https://github.com/ankane/production_rails/issues/new)
+Have suggestions? [Help make this guide better](https://github.com/ankane/production_rails/issues/new)
