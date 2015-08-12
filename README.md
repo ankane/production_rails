@@ -119,4 +119,6 @@ end
 
 ## Lastly...
 
-Have suggestions? [Help make this guide better for everyone](https://github.com/ankane/production_rails/issues/new)
+Have suggestions? [Help make this guide better for everyone](https://github.com/ankane/production_rails/issues/new).
+
+If you use Heroku, check out [Rails on Heroku](https://github.com/ankane/shorts/blob/master/Rails-on-Heroku.md).
