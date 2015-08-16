@@ -93,9 +93,13 @@ Use [Notable](https://github.com/ankane/notable) to track notable requests and b
 
 ## Timeouts
 
-[Add timeouts](https://github.com/ankane/the-ultimate-guide-to-ruby-timeouts) to all network requests.
+[Add timeouts](https://github.com/ankane/the-ultimate-guide-to-ruby-timeouts).
 
-Use [Slowpoke](https://github.com/ankane/slowpoke) for request and database timeouts. :gem:
+Add them to:
+
+- [web requests](https://github.com/ankane/the-ultimate-guide-to-ruby-timeouts#rack-middleware)
+- [database connections](https://github.com/ankane/the-ultimate-guide-to-ruby-timeouts#activerecord)
+- and more
 
 ## Performance
 
