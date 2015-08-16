@@ -107,7 +107,7 @@ Use [Slowpoke](https://github.com/ankane/slowpoke) for request and database time
 
 ## Development Bonus
 
-[Fix double logging](https://github.com/rails/rails/issues/11415#issuecomment-57648388) in the Rails console. Create `config/initializers/log_once.rb` with:
+If you experience [double logging in the Rails console](https://github.com/rails/rails/issues/11415#issuecomment-57648388), create `config/initializers/fix_double_logging.rb` with:
 
 ```ruby
 ActiveSupport::Logger.class_eval do
