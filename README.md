@@ -99,7 +99,7 @@ Use [Slowpoke](https://github.com/ankane/slowpoke) for request and database time
 
 ## Performance
 
-- Use a high performance web server like [Unicorn](http://unicorn.bogomips.org/)
+- Use a high performance web server like [Puma](https://devcenter.heroku.com/articles/deploying-rails-applications-with-the-puma-web-server)
 - Use [Rack::Deflater](https://robots.thoughtbot.com/content-compression-with-rack-deflater) for compression
 - Add [Oj](https://github.com/ohler55/oj) to speed up JSON parsing
 - Use [Memcached](https://github.com/mperham/dalli) for caching
