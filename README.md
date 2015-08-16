@@ -93,7 +93,7 @@ Use [Notable](https://github.com/ankane/notable) to track notable requests and b
 
 ## Timeouts
 
-[Add timeouts](https://github.com/ankane/ruby-timeouts) to all network requests.
+[Add timeouts](https://github.com/ankane/the-ultimate-guide-to-ruby-timeouts) to all network requests.
 
 Use [Slowpoke](https://github.com/ankane/slowpoke) for request and database timeouts. :gem:
 
@@ -103,6 +103,7 @@ Use [Slowpoke](https://github.com/ankane/slowpoke) for request and database time
 - Use [Rack::Deflater](https://robots.thoughtbot.com/content-compression-with-rack-deflater) for compression
 - Add [Oj](https://github.com/ohler55/oj) to speed up JSON parsing
 - Use [Memcached](https://github.com/mperham/dalli) for caching
+- Use a [CDN](https://en.wikipedia.org/wiki/Content_delivery_network) like [Amazon CloudFront](https://aws.amazon.com/cloudfront/) to serve assets
 
 ## Development Bonus
 
