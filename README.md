@@ -109,6 +109,10 @@ Add them to:
 - Use [Memcached](https://github.com/mperham/dalli) for caching
 - Use a [CDN](https://en.wikipedia.org/wiki/Content_delivery_network) like [Amazon CloudFront](https://aws.amazon.com/cloudfront/) to serve assets
 
+## New Features
+
+Use a feature flipper library like [Rollout](https://github.com/FetLife/rollout) to easily enable and disable new features without pushing code.
+
 ## Development Bonus
 
 If you experience [double logging in the Rails console](https://github.com/rails/rails/issues/11415), create `config/initializers/logger.rb` with:
