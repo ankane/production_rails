@@ -113,6 +113,10 @@ Add them to:
 
 Use a feature flipper library like [Rollout](https://github.com/FetLife/rollout) to easily enable and disable new features without pushing code.
 
+## Migrations
+
+[Read this](http://pedro.herokuapp.com/past/2011/7/13/rails_migrations_with_no_downtime/).
+
 ## Development Bonus
 
 If you experience [double logging in the Rails console](https://github.com/rails/rails/issues/11415), create `config/initializers/logger.rb` with:
