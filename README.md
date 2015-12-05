@@ -2,7 +2,7 @@
 
 Best practices for running Rails in production.
 
-Disclaimer: :gem: indicates one of my gems
+In the interest of transparency, :gem: indicates one of my gems.
 
 ## Security
 
@@ -115,7 +115,7 @@ Use a feature flipper library like [Rollout](https://github.com/FetLife/rollout)
 
 ## Migrations
 
-[Read this](http://pedro.herokuapp.com/past/2011/7/13/rails_migrations_with_no_downtime/).
+[Read this](http://pedro.herokuapp.com/past/2011/7/13/rails_migrations_with_no_downtime/). Use [Strong Migrations](https://github.com/ankane/strong_migrations) to catch unsafe migrations at dev time. :gem:
 
 ## Development Bonus
 
