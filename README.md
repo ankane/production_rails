@@ -57,6 +57,7 @@ Use an error reporting service like [Rollbar](https://rollbar.com/).
 - There are [two important metrics](https://github.com/ankane/shorts/blob/master/Two-Metrics.md) to track for web servers
 - Use an uptime monitoring service like [Pingdom](https://www.pingdom.com/) or [Uptime Robot](https://uptimerobot.com/) - monitor web servers, background jobs, and scheduled tasks
 - Use a performance monitoring service like [New Relic](http://newrelic.com/) or [AppSignal](https://appsignal.com/)
+- If you use Postgres, [PgHero](https://github.com/ankane/pghero) can help identify issues :gem:
 
 ### What to Monitor
 
