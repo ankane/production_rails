@@ -58,6 +58,7 @@ Use an error reporting service like [Rollbar](https://rollbar.com/).
 - Use an uptime monitoring service like [Pingdom](https://www.pingdom.com/) or [Uptime Robot](https://uptimerobot.com/) - monitor web servers, background jobs, and scheduled tasks
 - Use a performance monitoring service like [New Relic](http://newrelic.com/) or [AppSignal](https://appsignal.com/)
 - If you use Postgres, [PgHero](https://github.com/ankane/pghero) can help identify issues :gem:
+- Use [Marginalia](https://github.com/basecamp/marginalia) to track the origin of SQL queries
 
 ### What to Monitor
 
