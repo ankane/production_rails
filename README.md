@@ -52,6 +52,8 @@ Use an auditing library like [Audited](https://github.com/collectiveidea/audited
 
 Use an error reporting service like [Rollbar](https://rollbar.com/).
 
+Use [Safely](https://github.com/ankane/safely) to catch exceptions in non-critical code. :gem:
+
 ## Monitoring
 
 - There are [two important metrics](https://github.com/ankane/shorts/blob/master/Two-Metrics.md) to track for web servers
