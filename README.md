@@ -119,21 +119,10 @@ Use a feature flipper library like [Rollout](https://github.com/FetLife/rollout)
 
 [Read this](http://pedro.herokuapp.com/past/2011/7/13/rails_migrations_with_no_downtime/). Use [Strong Migrations](https://github.com/ankane/strong_migrations) to catch unsafe migrations at dev time. :gem:
 
-## Development Bonus
-
-If you experience [double logging in the Rails console](https://github.com/rails/rails/issues/11415), create `config/initializers/logger.rb` with:
-
-```ruby
-ActiveSupport::Logger.class_eval do
-  def self.broadcast(logger)
-    Module.new do
-    end
-  end
-end
-```
-
 ## Lastly...
 
 Have suggestions? [Help make this guide better for everyone](https://github.com/ankane/production_rails/issues/new).
+
+Also check out [best practices](https://github.com/ankane/shorts/blob/master/Development-Rails.md) for developing with Rails.
 
 If you use Heroku, check out [Rails on Heroku](https://github.com/ankane/shorts/blob/master/Rails-on-Heroku.md).
