@@ -52,7 +52,7 @@ Use an auditing library like [Audited](https://github.com/collectiveidea/audited
 
 Use an error reporting service like [Rollbar](https://rollbar.com/).
 
-Use [Safely](https://github.com/ankane/safely) to catch exceptions in non-critical code. :gem:
+Use [Safely](https://github.com/ankane/safely) to rescue and report exceptions in non-critical code. :gem:
 
 ## Monitoring
 
