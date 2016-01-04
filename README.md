@@ -46,7 +46,7 @@ end
 
 ## Audits
 
-Use an auditing library like [Audited](https://github.com/collectiveidea/audited).
+Use an auditing library like [Audited](https://github.com/collectiveidea/audited) or [Papertrail](https://github.com/airblade/paper_trail) to track how data fields change on important models.
 
 ## Errors
 
