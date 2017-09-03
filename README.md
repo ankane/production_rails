@@ -143,7 +143,7 @@ production:
   checkout_timeout: 5
   variables:
     max_execution_time: 5000 # ms, for MySQL 5.7.8 or higher
-    max_statement_time: 5 # sec, for MariaDB 10.1.1
+    max_statement_time: 5 # sec, for MariaDB 10.1.1 or higher
 ```
 
 ## Performance
