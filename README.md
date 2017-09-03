@@ -24,20 +24,18 @@ Use [Lograge](https://github.com/roidrage/lograge) to reduce volume.
 gem 'lograge'
 ```
 
-Add the following to `config/environments/production.rb`.
+Configure it to add `request_id`, `user_id`, and `params`.
 
 ```ruby
+# config/environments/production.rb
 config.lograge.enabled = true
 config.lograge.custom_options = lambda do |event|
   options = event.payload.slice(:request_id, :user_id)
   options[:params] = event.payload[:params].except("controller", "action")
   options
 end
-```
 
-Add the following to `app/controllers/application_controller.rb`.
-
-```ruby
+# app/controllers/application_controller.rb
 def append_info_to_payload(payload)
   super
   payload[:request_id] = request.uuid
