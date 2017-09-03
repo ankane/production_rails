@@ -1,8 +1,8 @@
 # Production Rails
 
-Best practices for running Rails in production.
+:rocket: Best practices for running Rails in production
 
-In the interest of transparency, :gem: indicates one of my gems.
+This guide covers different concepts you should be familiar with. The recommendations come from both personal and work experience at [Instacart](https://www.instacart.com/opensource). A few of the open source projects are ones I’ve created. For a comprehensive list of gems and services, check out [Awesome Ruby](http://awesome-ruby.com).
 
 ## Security
 
@@ -12,11 +12,13 @@ Everyone writing code must be responsible for security. [Best practices](https:/
 
 Use an analytics service like [Google Analytics](http://www.google.com/analytics/) or [Mixpanel](https://mixpanel.com/).
 
-And possibly an open source library like [Ahoy](https://github.com/ankane/ahoy). :gem:
+And possibly an open source library like [Ahoy](https://github.com/ankane/ahoy).
 
 ## Logging
 
-Use [Lograge](https://github.com/roidrage/lograge).
+Use a centralized logging service like [LogDNA](https://logdna.com).
+
+Use [Lograge](https://github.com/roidrage/lograge) to reduce volume.
 
 ```ruby
 gem 'lograge'
@@ -52,14 +54,18 @@ Use an auditing library like [Audited](https://github.com/collectiveidea/audited
 
 Use an error reporting service like [Rollbar](https://rollbar.com/).
 
-Use [Safely](https://github.com/ankane/safely) to rescue and report exceptions in non-critical code. :gem:
+Use [Safely](https://github.com/ankane/safely) to rescue and report exceptions in non-critical code.
+
+## Background Jobs
+
+Use a high performance background processing framework like [Sidekiq](https://github.com/mperham/sidekiq).
 
 ## Monitoring
 
 - There are [two important metrics](https://github.com/ankane/shorts/blob/master/Two-Metrics.md) to track for web servers
 - Use an uptime monitoring service like [Pingdom](https://www.pingdom.com/) or [Uptime Robot](https://uptimerobot.com/) - monitor web servers, background jobs, and scheduled tasks
 - Use a performance monitoring service like [New Relic](http://newrelic.com/) or [AppSignal](https://appsignal.com/)
-- If you use Postgres, [PgHero](https://github.com/ankane/pghero) can help identify issues :gem:
+- If you use Postgres, [PgHero](https://github.com/ankane/pghero) can help identify issues
 - Use [Marginalia](https://github.com/basecamp/marginalia) to track the origin of SQL queries
 
 ### What to Monitor
@@ -85,7 +91,7 @@ Use [Safely](https://github.com/ankane/safely) to rescue and report exceptions i
 
 ### Notable Events
 
-Use [Notable](https://github.com/ankane/notable) to track notable requests and background jobs. :gem:
+Use [Notable](https://github.com/ankane/notable) to track notable requests and background jobs.
 
 - errors
 - slow requests, jobs, and timeouts
@@ -119,7 +125,7 @@ Use a feature flipper library like [Rollout](https://github.com/FetLife/rollout)
 
 ## Migrations
 
-[Read this](http://pedro.herokuapp.com/past/2011/7/13/rails_migrations_with_no_downtime/). Use [Strong Migrations](https://github.com/ankane/strong_migrations) to catch unsafe migrations at dev time. :gem:
+[Read this](http://pedro.herokuapp.com/past/2011/7/13/rails_migrations_with_no_downtime/). Use [Strong Migrations](https://github.com/ankane/strong_migrations) to catch unsafe migrations at dev time.
 
 ## Lastly...
 
