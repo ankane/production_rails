@@ -58,7 +58,17 @@ Use [Safely](https://github.com/ankane/safely) to rescue and report exceptions i
 
 ## Background Jobs
 
-Use a high performance background processing framework like [Sidekiq](https://github.com/mperham/sidekiq).
+Use a high performance background processing framework like [Sidekiq](https://github.com/mperham/sidekiq) with ActiveJob.
+
+Use [ActiveJob::TrafficControl](https://github.com/nickelser/activejob-traffic_control) to:
+
+- quickly disable jobs
+- throttle
+- limit concurrency
+
+```ruby
+BadJob.disable!
+```
 
 ## Monitoring
 
