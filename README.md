@@ -2,7 +2,7 @@
 
 :rocket: Best practices for running Rails in production
 
-This guide covers different concepts you should be familiar with. The recommendations come from personal experience and work at [Instacart](https://www.instacart.com/opensource). A few of the open source projects are ones I’ve created. For a comprehensive list of gems, check out [Awesome Ruby](http://awesome-ruby.com).
+This guide covers different concepts you should be familiar with. Recommendations come from personal experience and work at [Instacart](https://www.instacart.com/opensource). A few of the open source projects are ones I’ve created. For a comprehensive list of gems, check out [Awesome Ruby](http://awesome-ruby.com).
 
 ## Security
 
