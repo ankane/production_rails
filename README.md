@@ -121,7 +121,30 @@ Use [Notable](https://github.com/ankane/notable) to track notable requests and b
 
 [Add timeouts](https://github.com/ankane/the-ultimate-guide-to-ruby-timeouts).
 
-Add them to [web requests](https://github.com/ankane/the-ultimate-guide-to-ruby-timeouts#rack-middleware), [database connections](https://github.com/ankane/the-ultimate-guide-to-ruby-timeouts#activerecord), and more.
+One very important place is ActiveRecord. Add to `config/database.yml` and adjust as needed.
+
+#### PostgreSQL
+
+```yml
+production:
+  connect_timeout: 1
+  checkout_timeout: 5
+  variables:
+    statement_timeout: 5000 # ms
+```
+
+#### MySQL and MariaDB
+
+```yml
+production:
+  connect_timeout: 1
+  read_timeout: 1
+  write_timeout: 1
+  checkout_timeout: 5
+  variables:
+    max_execution_time: 5000 # ms, for MySQL 5.7.8 or higher
+    max_statement_time: 5 # sec, for MariaDB 10.1.1
+```
 
 ## Performance
 
