@@ -8,11 +8,11 @@ This guide covers different concepts you should be familiar with. Recommendation
 
 Everyone writing code must be responsible for security. [Best practices](https://github.com/ankane/secure_rails)
 
-## Analytics
+## Errors
 
-Use an analytics service like [Google Analytics](http://www.google.com/analytics/) or [Mixpanel](https://mixpanel.com/).
+Use an error reporting service like [Rollbar](https://rollbar.com/).
 
-And possibly an open source library like [Ahoy](https://github.com/ankane/ahoy).
+Use [Safely](https://github.com/ankane/safely) to rescue and report exceptions in non-critical code.
 
 ## Logging
 
@@ -42,7 +42,6 @@ def append_info_to_payload(payload)
   super
   payload[:request_id] = request.uuid
   payload[:user_id] = current_user.id if current_user
-  payload[:visit_id] = ahoy.visit_id # if you use Ahoy
 end
 ```
 
@@ -50,11 +49,9 @@ end
 
 Use an auditing library like [Audited](https://github.com/collectiveidea/audited).
 
-## Errors
+## Migrations
 
-Use an error reporting service like [Rollbar](https://rollbar.com/).
-
-Use [Safely](https://github.com/ankane/safely) to rescue and report exceptions in non-critical code.
+Use [Strong Migrations](https://github.com/ankane/strong_migrations) to catch unsafe migrations at dev time.
 
 ## Web Requests
 
@@ -133,13 +130,15 @@ Add them to [web requests](https://github.com/ankane/the-ultimate-guide-to-ruby-
 - Add [Oj](https://github.com/ohler55/oj) to speed up JSON parsing
 - Use [Memcached](https://github.com/mperham/dalli) for caching
 
+## Analytics
+
+Use an analytics service like [Google Analytics](http://www.google.com/analytics/) or [Mixpanel](https://mixpanel.com/).
+
+And possibly an open source library like [Ahoy](https://github.com/ankane/ahoy).
+
 ## New Features
 
 Use a feature flipper library like [Rollout](https://github.com/FetLife/rollout) to easily enable and disable new features without pushing code.
-
-## Migrations
-
-Use [Strong Migrations](https://github.com/ankane/strong_migrations) to catch unsafe migrations at dev time.
 
 ## Lastly...
 
