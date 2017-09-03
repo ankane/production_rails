@@ -56,6 +56,18 @@ Use an error reporting service like [Rollbar](https://rollbar.com/).
 
 Use [Safely](https://github.com/ankane/safely) to rescue and report exceptions in non-critical code.
 
+## Web Requests
+
+There are [two important metrics](https://github.com/ankane/shorts/blob/master/Two-Metrics.md) to track for web servers.
+
+Use a high performance web server like [Puma](https://devcenter.heroku.com/articles/deploying-rails-applications-with-the-puma-web-server).
+
+Use [Rack::Deflater](https://robots.thoughtbot.com/content-compression-with-rack-deflater) for compression.
+
+Use a [CDN](https://en.wikipedia.org/wiki/Content_delivery_network) like [Amazon CloudFront](https://aws.amazon.com/cloudfront/) to serve assets.
+
+Use [Slowpoke](https://github.com/ankane/slowpoke) for request timeouts.
+
 ## Background Jobs
 
 Use a high performance background processing framework like [Sidekiq](https://github.com/mperham/sidekiq) with ActiveJob.
@@ -72,7 +84,6 @@ BadJob.disable!
 
 ## Monitoring
 
-- There are [two important metrics](https://github.com/ankane/shorts/blob/master/Two-Metrics.md) to track for web servers
 - Use an uptime monitoring service like [Pingdom](https://www.pingdom.com/) or [Uptime Robot](https://uptimerobot.com/) - monitor web servers, background jobs, and scheduled tasks
 - Use a performance monitoring service like [New Relic](http://newrelic.com/) or [AppSignal](https://appsignal.com/)
 - If you use Postgres, [PgHero](https://github.com/ankane/pghero) can help identify issues
@@ -115,19 +126,12 @@ Use [Notable](https://github.com/ankane/notable) to track notable requests and b
 
 [Add timeouts](https://github.com/ankane/the-ultimate-guide-to-ruby-timeouts).
 
-Add them to:
-
-- [web requests](https://github.com/ankane/the-ultimate-guide-to-ruby-timeouts#rack-middleware)
-- [database connections](https://github.com/ankane/the-ultimate-guide-to-ruby-timeouts#activerecord)
-- and more
+Add them to [web requests](https://github.com/ankane/the-ultimate-guide-to-ruby-timeouts#rack-middleware), [database connections](https://github.com/ankane/the-ultimate-guide-to-ruby-timeouts#activerecord), and more.
 
 ## Performance
 
-- Use a high performance web server like [Puma](https://devcenter.heroku.com/articles/deploying-rails-applications-with-the-puma-web-server)
-- Use [Rack::Deflater](https://robots.thoughtbot.com/content-compression-with-rack-deflater) for compression
 - Add [Oj](https://github.com/ohler55/oj) to speed up JSON parsing
 - Use [Memcached](https://github.com/mperham/dalli) for caching
-- Use a [CDN](https://en.wikipedia.org/wiki/Content_delivery_network) like [Amazon CloudFront](https://aws.amazon.com/cloudfront/) to serve assets
 
 ## New Features
 
@@ -135,7 +139,7 @@ Use a feature flipper library like [Rollout](https://github.com/FetLife/rollout)
 
 ## Migrations
 
-[Read this](http://pedro.herokuapp.com/past/2011/7/13/rails_migrations_with_no_downtime/). Use [Strong Migrations](https://github.com/ankane/strong_migrations) to catch unsafe migrations at dev time.
+Use [Strong Migrations](https://github.com/ankane/strong_migrations) to catch unsafe migrations at dev time.
 
 ## Lastly...
 
