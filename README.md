@@ -103,6 +103,10 @@ config.cache_store = :dalli_store
 
 Use a library like [Memoist](https://github.com/matthewrudy/memoist) for memoizing.
 
+```ruby
+memoize :time_consuming_method
+```
+
 Add [Oj](https://github.com/ohler55/oj) to speed up JSON parsing.
 
 ## Monitoring
