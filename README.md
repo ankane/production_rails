@@ -95,7 +95,11 @@ Add UTM parameters to links.
 
 ## Caching and Performance
 
-Use [Memcached](https://github.com/mperham/dalli) for caching.
+Use [Memcached](https://memcached.org/) and [Dalli](https://github.com/mperham/dalli) for caching.
+
+```ruby
+config.cache_store = :dalli_store
+```
 
 Use a library like [Memoist](https://github.com/matthewrudy/memoist) for memoizing.
 
