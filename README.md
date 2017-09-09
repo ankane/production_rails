@@ -77,6 +77,30 @@ Use [ActiveJob::TrafficControl](https://github.com/nickelser/activejob-traffic_c
 BadJob.disable!
 ```
 
+## Email
+
+For transactional emails, use an email delivery service like [SendGrid](https://sendgrid.com/).
+
+For marketing emails, use a service like [MailChimp](https://mailchimp.com/).
+
+For styling, use a CSS inliner like [Roadie](https://github.com/Mange/roadie-rails).
+
+```ruby
+class ApplicationMailer < ActionMailer::Base
+  include Roadie::Rails::Automatic
+end
+```
+
+Add UTM parameters to links.
+
+## Caching and Performance
+
+Use [Memcached](https://github.com/mperham/dalli) for caching.
+
+Use a library like [Memoist](https://github.com/matthewrudy/memoist) for memoizing.
+
+Add [Oj](https://github.com/ohler55/oj) to speed up JSON parsing.
+
 ## Monitoring
 
 - Use an uptime monitoring service like [Pingdom](https://www.pingdom.com/) or [Uptime Robot](https://uptimerobot.com/) - monitor web servers, background jobs, and scheduled tasks
@@ -145,11 +169,6 @@ production:
     max_execution_time: 5000 # ms, for MySQL 5.7.8 or higher
     max_statement_time: 5 # sec, for MariaDB 10.1.1 or higher
 ```
-
-## Performance
-
-- Add [Oj](https://github.com/ohler55/oj) to speed up JSON parsing
-- Use [Memcached](https://github.com/mperham/dalli) for caching
 
 ## Analytics
 
