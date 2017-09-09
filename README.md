@@ -18,13 +18,7 @@ Use [Safely](https://github.com/ankane/safely) to rescue and report exceptions i
 
 Use a centralized logging service like [LogDNA](https://logdna.com).
 
-Use [Lograge](https://github.com/roidrage/lograge) to reduce volume.
-
-```ruby
-gem 'lograge'
-```
-
-Configure it to add `request_id`, `user_id`, and `params`.
+Use [Lograge](https://github.com/roidrage/lograge) to reduce volume. Configure it to add `request_id`, `user_id`, and `params`.
 
 ```ruby
 # config/environments/production.rb
