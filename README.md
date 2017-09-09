@@ -67,6 +67,10 @@ Use [Slowpoke](https://github.com/ankane/slowpoke) for request timeouts.
 
 Use a high performance background processing framework like [Sidekiq](https://github.com/mperham/sidekiq) with ActiveJob.
 
+```ruby
+config.active_job.queue_adapter = :sidekiq
+```
+
 Use [ActiveJob::TrafficControl](https://github.com/nickelser/activejob-traffic_control) to:
 
 - quickly disable jobs
