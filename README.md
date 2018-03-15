@@ -47,7 +47,7 @@ Use [Strong Migrations](https://github.com/ankane/strong_migrations) to catch un
 
 ## Web Requests
 
-There are [two important metrics](https://github.com/ankane/shorts/blob/master/Two-Metrics.md) to track for web servers.
+There are two important metrics to track for web servers - 5xx errors and latency.
 
 Use a high performance web server like [Puma](https://devcenter.heroku.com/articles/deploying-rails-applications-with-the-puma-web-server).
 
