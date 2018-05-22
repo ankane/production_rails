@@ -8,13 +8,48 @@ This guide covers different concepts you should be familiar with. Recommendation
 
 Everyone writing code must be responsible for security. [Best practices](https://github.com/ankane/secure_rails)
 
-## Errors
+## Monitoring
+
+### Tracing
+
+Use a performance monitoring service with transaction traces like [New Relic](https://newrelic.com/), [AppSignal](https://appsignal.com/), or [Scout](https://scoutapp.com).
+
+### Uptime
+
+#### Web
+
+Use an uptime monitoring service like [Pingdom](https://www.pingdom.com/) or [Uptime Robot](https://uptimerobot.com/).
+
+#### Scheduled Tasks
+
+Services like [Deadman's Snitch](https://deadmanssnitch.com/) ensure scheduled tasks, like Cron jobs, are executing.
+
+### Errors
 
 Use an error reporting service like [Rollbar](https://rollbar.com/).
 
 Use [Safely](https://github.com/ankane/safely) to rescue and report exceptions in non-critical code.
 
-## Logging
+### Database
+
+The database is a common bottleneck for Rails apps and deserves some special monitoring attention. There are some dedicated tools for this:
+
+- If you use Postgres, [PgHero](https://github.com/ankane/pghero) can help identify issues
+- Use [Marginalia](https://github.com/basecamp/marginalia) to track the origin of SQL queries
+
+### Notable Events
+
+Use [Notable](https://github.com/ankane/notable) to track notable requests and background jobs.
+
+- errors
+- slow requests, jobs, and timeouts
+- 404s
+- validation failures
+- CSRF failures
+- unpermitted parameters
+- blocked and throttled requests
+
+### Logging
 
 Use a centralized logging service like [LogDNA](https://logdna.com).
 
@@ -36,7 +71,6 @@ def append_info_to_payload(payload)
   payload[:user_id] = current_user.id if current_user
 end
 ```
-
 ## Audits
 
 Use an auditing library like [Audited](https://github.com/collectiveidea/audited).
@@ -46,8 +80,6 @@ Use an auditing library like [Audited](https://github.com/collectiveidea/audited
 Use [Strong Migrations](https://github.com/ankane/strong_migrations) to catch unsafe migrations at dev time.
 
 ## Web Requests
-
-There are two important metrics to track for web servers - 5xx errors and latency.
 
 Use a high performance web server like [Puma](https://devcenter.heroku.com/articles/deploying-rails-applications-with-the-puma-web-server).
 
@@ -107,45 +139,27 @@ memoize :time_consuming_method
 
 Add [Oj](https://github.com/ohler55/oj) to speed up JSON parsing.
 
-## Monitoring
+## Performance KPIs
 
-- Use an uptime monitoring service like [Pingdom](https://www.pingdom.com/) or [Uptime Robot](https://uptimerobot.com/) - monitor web servers, background jobs, and scheduled tasks
-- Use a performance monitoring service like [New Relic](https://newrelic.com/) or [AppSignal](https://appsignal.com/)
-- If you use Postgres, [PgHero](https://github.com/ankane/pghero) can help identify issues
-- Use [Marginalia](https://github.com/basecamp/marginalia) to track the origin of SQL queries
+### Web Requests
 
-### What to Monitor
-
-##### Web Requests
-
+- 5xx errors and latency
 - requests by action - total time, count
 - queue time - X-Request-Start header
 
-##### Background Jobs and Rake Tasks
+### Background Jobs and Rake Tasks
 
 - jobs by type - total time, count
 
-##### Data Stores - Database, Elasticsearch, Redis
+### Data Stores - Database, Elasticsearch, Redis
 
 - requests by type - total time, count
 - CPU usage
 - space
 
-##### External Services
+### External Services
 
 - requests by type - total time, count
-
-### Notable Events
-
-Use [Notable](https://github.com/ankane/notable) to track notable requests and background jobs.
-
-- errors
-- slow requests, jobs, and timeouts
-- 404s
-- validation failures
-- CSRF failures
-- unpermitted parameters
-- blocked and throttled requests
 
 ## Timeouts
 
