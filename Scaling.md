@@ -22,7 +22,7 @@ The database is often the primary bottleneck when scaling.
 - Scale reads out by fixing n+1 queries, caching frequent queries, and using read replicas. Use [Distribute Reads](https://github.com/ankane/distribute_reads) for replicas.
 - Scale writes with separate databases. Use [Multiverse](https://github.com/ankane/multiverse) for seperate databases.
 - Scale space with separate database or partitioning. For Postgres, [pgslice](https://github.com/ankane/pgslice) can help with partitioning.
-- Scale connections with a connection pooler. For Postgres, use PgBouncer [PgBouncer Setup](PgBouncer-Setup.md).
+- Scale connections with a connection pooler. For Postgres, use [PgBouncer](https://github.com/ankane/shorts/blob/master/PgBouncer-Setup.md).
 
 ## Background Jobs
 
