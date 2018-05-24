@@ -8,48 +8,13 @@ This guide covers different concepts you should be familiar with. Recommendation
 
 Everyone writing code must be responsible for security. [Best practices](https://github.com/ankane/secure_rails)
 
-## Monitoring
-
-### Tracing
-
-Use a performance monitoring service with transaction traces like [New Relic](https://newrelic.com/), [AppSignal](https://appsignal.com/), or [Scout](https://scoutapp.com).
-
-### Uptime
-
-#### Web
-
-Use an uptime monitoring service like [Pingdom](https://www.pingdom.com/) or [Uptime Robot](https://uptimerobot.com/).
-
-#### Scheduled Tasks
-
-Services like [Deadman's Snitch](https://deadmanssnitch.com/) ensure scheduled tasks, like Cron jobs, are executing.
-
-### Errors
+## Errors
 
 Use an error reporting service like [Rollbar](https://rollbar.com/).
 
 Use [Safely](https://github.com/ankane/safely) to rescue and report exceptions in non-critical code.
 
-### Database
-
-The database is a common bottleneck for Rails apps and deserves some special monitoring attention. There are some dedicated tools for this:
-
-- If you use Postgres, [PgHero](https://github.com/ankane/pghero) can help identify issues
-- Use [Marginalia](https://github.com/basecamp/marginalia) to track the origin of SQL queries
-
-### Notable Events
-
-Use [Notable](https://github.com/ankane/notable) to track notable requests and background jobs.
-
-- errors
-- slow requests, jobs, and timeouts
-- 404s
-- validation failures
-- CSRF failures
-- unpermitted parameters
-- blocked and throttled requests
-
-### Logging
+## Logging
 
 Use a centralized logging service like [LogDNA](https://logdna.com).
 
@@ -138,6 +103,35 @@ memoize :time_consuming_method
 ```
 
 Add [Oj](https://github.com/ohler55/oj) to speed up JSON parsing.
+
+## Monitoring
+
+### Tracing
+
+Use a performance monitoring service with transaction traces like [New Relic](https://newrelic.com/) or [AppSignal](https://appsignal.com/).
+
+### Uptime
+
+Use an uptime monitoring service like [Pingdom](https://www.pingdom.com/) or [Uptime Robot](https://uptimerobot.com/).
+
+### Database
+
+The database is a common bottleneck for Rails apps and deserves some special monitoring attention. There are some dedicated tools for this:
+
+- If you use Postgres, [PgHero](https://github.com/ankane/pghero) can help identify issues
+- Use [Marginalia](https://github.com/basecamp/marginalia) to track the origin of SQL queries
+
+### Notable Events
+
+Use [Notable](https://github.com/ankane/notable) to track notable requests and background jobs.
+
+- errors
+- slow requests, jobs, and timeouts
+- 404s
+- validation failures
+- CSRF failures
+- unpermitted parameters
+- blocked and throttled requests
 
 ## Performance KPIs
 
