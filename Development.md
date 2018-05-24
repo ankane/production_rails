@@ -10,7 +10,7 @@ Always, always, always manually test what youâ€™re building in development. Itâ€
 
 Use [dotenv-rails](https://github.com/bkeepers/dotenv) for environment variables. Do not check this in. Create a `.env.example` without secrets.
 
-Use [foreman](https://github.com/ddollar/foreman) to manage multiple processes.
+Use [Foreman](https://github.com/ddollar/foreman) to manage multiple processes.
 
 ## Debugging
 
@@ -18,7 +18,7 @@ Set up debugging tools behind environment variables so you can enable and disabl
 
 Use [ruby-prof](https://github.com/ruby-prof/ruby-prof) to profile code.
 
-Use [bullet](https://github.com/flyerhzm/bullet) to find n + 1 queries.
+Use [Bullet](https://github.com/flyerhzm/bullet) to find n + 1 queries.
 
 ## Console
 
@@ -34,15 +34,15 @@ require "awesome_print"
 AwesomePrint.irb!
 ```
 
-Use [awesome_print](https://github.com/michaeldv/awesome_print) or [pry-rails](https://github.com/rweng/pry-rails) for a friendlier console.
+Use [Awesome Print](https://github.com/michaeldv/awesome_print) or [pry-rails](https://github.com/rweng/pry-rails) for a friendlier console.
 
 ## Logging
 
-Use [CacheFlow](https://github.com/ankane/cacheflow) to instrument caches.
+Use [Cacheflow](https://github.com/ankane/cacheflow) to instrument caches.
 
 ## Email
 
-Use [letter_opener](https://github.com/ryanb/letter_opener) for email.
+Use [Letter Opener](https://github.com/ryanb/letter_opener) for email.
 
 ## Data
 
