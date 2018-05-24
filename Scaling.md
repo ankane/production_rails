@@ -10,6 +10,8 @@ Keep the [majestic monolith](https://m.signalvnoise.com/the-majestic-monolith-29
 
 Assign different teams as owners for different parts of the code for things like triaging errors. **Do not** to discourge other teams from working in that part of the code. [Ownership](https://github.com/ankane/ownership) can help with this.
 
+## Technology
+
 Max out your existing technologies before introducing new ones. Even if your current technology isn’t the perfect fit for the job, there’s a huge cost associated with learning and operating something new.
 
 ## Database
