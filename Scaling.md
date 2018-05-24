@@ -26,4 +26,6 @@ The database is often the primary bottleneck when scaling.
 
 If you use [Sidekiq](https://github.com/mperham/sidekiq) and Redis CPU gets too high, try reducing the number of queues each type of worker is dedicated to. The number of Redis calls required to check queues is proportional to the number of queues a worker has to process.
 
-:arrow_backward: [Back to home](README.md)
+---
+
+:arrow_forward: [Back to home](README.md)

@@ -138,4 +138,6 @@ Subscribe to [ruby-security-ann](https://groups.google.com/forum/#!forum/ruby-se
 
 Have other good practices? Know of more great tools? [Help make this guide better for everyone](https://github.com/ankane/rails-best-practices/issues/new).
 
-:arrow_backward: [Back to home](README.md)
+---
+
+:arrow_forward: [Next: Scaling](Scaling.md)
