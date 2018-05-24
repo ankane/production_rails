@@ -4,7 +4,7 @@
 
 ## Philosophy
 
-Always, always, always manually test what you’re building in development. It’s extremely important to have a fast feedback loop. Testing on staging or production is slow. If it’s not easy to test in development, spend time to make it easy.
+Always, always manually test what you’re building in development. It’s extremely important to have a fast feedback loop. Testing on staging or production is slow. If it’s not easy to test in development, spend time to make it easy.
 
 ## Environment
 
