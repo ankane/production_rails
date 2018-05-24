@@ -6,7 +6,7 @@
 
 ## Codebase
 
-Keep the [majestic monolith](https://m.signalvnoise.com/the-majestic-monolith-29166d022228) as long as possible. Spend a good amount of time fixing pain (app boot times and test times are common sources). [Microservices](https://martinfowler.com/articles/microservices.html) and [self-contained services](http://scs-architecture.org/) add a huge amount of complexity.
+Keep the [majestic monolith](https://m.signalvnoise.com/the-majestic-monolith-29166d022228) as long as possible. Spend a good amount of time fixing pain (app boot times and test times are common sources). [Microservices](https://martinfowler.com/articles/microservices.html) or multiple [self-contained systems](http://scs-architecture.org/) add a huge amount of complexity.
 
 Assign different teams as owners for different parts of the code for things like triaging errors. **Do not** discourge other teams from working in that part of the code. [Ownership](https://github.com/ankane/ownership) can help with this.
 
