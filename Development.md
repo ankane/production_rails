@@ -55,7 +55,8 @@ Use aliases for common commands. Here are a few of my favorites:
 ```sh
 # rails
 alias rc="bin/rails console"
-alias dbm="bin/rake db:migrate"
+alias dbm="bin/rails db:migrate"
+alias dbr="bin/rails db:rollback"
 alias fsw="foreman start -c web=1"
 
 # git
