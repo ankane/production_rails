@@ -68,4 +68,4 @@ alias gcm="git checkout master"
 
 ---
 
-:arrow_forward: [Next: Security](Security.md)
+:arrow_forward: [Next: Security](https://github.com/ankane/secure_rails)

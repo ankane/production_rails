@@ -4,7 +4,7 @@
 
 ## Security
 
-Everyone writing code must be responsible for security. [Best practices](Security.md)
+Everyone writing code must be responsible for security. [Best practices](https://github.com/ankane/secure_rails)
 
 ## Errors
 

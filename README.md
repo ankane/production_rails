@@ -4,7 +4,7 @@
 
 - [Production](Production.md)
 - [Development](Development.md)
-- [Security](Security.md)
+- [Security](https://github.com/ankane/secure_rails)
 - [Scaling](Scaling.md)
 
 This guide covers different concepts you should be familiar with. Recommendations come from personal experience and work at [Instacart](https://www.instacart.com/opensource). A number of open source projects are ones I’ve created. For a comprehensive list of gems, check out [Awesome Ruby](http://awesome-ruby.com).
