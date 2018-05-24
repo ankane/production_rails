@@ -28,4 +28,4 @@ If you use [Sidekiq](https://github.com/mperham/sidekiq) and Redis CPU gets too 
 
 ---
 
-:arrow_forward: [Back to home](README.md)
+:arrow_forward: [Back to home](https://github.com/ankane/rails-best-practices)
