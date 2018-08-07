@@ -65,7 +65,3 @@ alias gc="git commit"
 alias gco="git checkout"
 alias gcm="git checkout master"
 ```
-
----
-
-:arrow_forward: [Next: Security](https://github.com/ankane/secure_rails)
