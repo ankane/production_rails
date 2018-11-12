@@ -166,7 +166,7 @@ One very important place is ActiveRecord. Add to `config/database.yml` and adjus
 
 ```yml
 production:
-  connect_timeout: 1
+  connect_timeout: 2
   checkout_timeout: 5
   variables:
     statement_timeout: 5000 # ms
