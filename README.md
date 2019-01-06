@@ -6,7 +6,7 @@ This guide covers different concepts you should be familiar with. Recommendation
 
 ## Security
 
-Everyone writing code must be responsible for security. [Best practices](https://github.com/ankane/secure_rails)
+Everyone writing code must be responsible for security. See [best practices](https://github.com/ankane/secure_rails) and [how to secure sensitive data](https://ankane.org/sensitive-data-rails).
 
 ## Errors
 
