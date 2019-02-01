@@ -193,7 +193,7 @@ And possibly an open source library like [Ahoy](https://github.com/ankane/ahoy).
 
 ## New Features
 
-Use a feature flipper library like [Rollout](https://github.com/FetLife/rollout) to easily enable and disable new features without pushing code.
+Use a feature flipper library like [Rollout](https://github.com/FetLife/rollout) or [Flipper](https://github.com/jnunemaker/flipper) to easily enable and disable new features without pushing code.
 
 ## Lastly...
 
