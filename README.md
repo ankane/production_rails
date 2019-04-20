@@ -134,28 +134,6 @@ Use [Notable](https://github.com/ankane/notable) to track notable requests and b
 - unpermitted parameters
 - blocked and throttled requests
 
-## Performance KPIs
-
-### Web Requests
-
-- 5xx errors and latency
-- requests by action - total time, count
-- queue time - X-Request-Start header
-
-### Background Jobs and Rake Tasks
-
-- jobs by type - total time, count
-
-### Data Stores - Database, Elasticsearch, Redis
-
-- requests by type - total time, count
-- CPU usage
-- space
-
-### External Services
-
-- requests by type - total time, count
-
 ## Timeouts
 
 [Add timeouts](https://github.com/ankane/the-ultimate-guide-to-ruby-timeouts).
