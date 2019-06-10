@@ -49,7 +49,7 @@ Use [Strong Migrations](https://github.com/ankane/strong_migrations) to catch un
 
 Use a high performance web server like [Puma](https://devcenter.heroku.com/articles/deploying-rails-applications-with-the-puma-web-server).
 
-Use [Rack::Deflater](https://robots.thoughtbot.com/content-compression-with-rack-deflater) for compression.
+Use [Rack::Deflater](https://www.schneems.com/2017/11/08/80-smaller-rails-footprint-with-rack-deflate/) for compression.
 
 Use a [CDN](https://en.wikipedia.org/wiki/Content_delivery_network) like [Amazon CloudFront](https://aws.amazon.com/cloudfront/) to serve assets.
 
