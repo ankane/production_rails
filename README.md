@@ -173,6 +173,8 @@ And possibly an open source library like [Ahoy](https://github.com/ankane/ahoy).
 
 Use a feature flipper library like [Rollout](https://github.com/FetLife/rollout) to easily enable and disable new features without pushing code.
 
+To A/B test features, use a library like [Field Test](https://github.com/ankane/field_test).
+
 ## Lastly...
 
 Have suggestions? [Help make this guide better for everyone](https://github.com/ankane/rails-best-practices/issues/new).
