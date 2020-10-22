@@ -57,7 +57,7 @@ Use [Slowpoke](https://github.com/ankane/slowpoke) for request timeouts.
 
 ## Background Jobs
 
-Use a high performance background processing framework like [Sidekiq](https://github.com/mperham/sidekiq) with ActiveJob.
+Use a high performance background processing framework like [Sidekiq](https://github.com/mperham/sidekiq) with Active Job.
 
 ```ruby
 config.active_job.queue_adapter = :sidekiq
@@ -138,7 +138,7 @@ Use [Notable](https://github.com/ankane/notable) to track notable requests and b
 
 [Add timeouts](https://github.com/ankane/the-ultimate-guide-to-ruby-timeouts).
 
-One very important place is ActiveRecord. Add to `config/database.yml` and adjust as needed.
+One very important place is Active Record. Add to `config/database.yml` and adjust as needed.
 
 #### PostgreSQL
 
