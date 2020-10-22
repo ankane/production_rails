@@ -165,9 +165,7 @@ production:
 
 ## Analytics
 
-Use an analytics service like [Google Analytics](https://www.google.com/analytics/) or [Mixpanel](https://mixpanel.com/).
-
-And possibly an open source library like [Ahoy](https://github.com/ankane/ahoy).
+Use an analytics tool to measure important events. Consider a first-party library like [Ahoy](https://github.com/ankane/ahoy), or use a third-party service like [Amplitude](https://amplitude.com/) or [Mixpanel](https://mixpanel.com/).
 
 ## New Features
 
