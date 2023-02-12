@@ -16,7 +16,7 @@ Use [Safely](https://github.com/ankane/safely) to rescue and report exceptions i
 
 ## Logging
 
-Use a centralized logging service like [LogDNA](https://logdna.com).
+Use a centralized logging service like [Mezmo](https://www.mezmo.com/).
 
 Use [Lograge](https://github.com/roidrage/lograge) to reduce volume. Configure it to add `request_id`, `user_id`, and `params`.
 
@@ -47,7 +47,7 @@ Use [Strong Migrations](https://github.com/ankane/strong_migrations) to catch un
 
 ## Web Requests
 
-Use a high performance web server like [Puma](https://devcenter.heroku.com/articles/deploying-rails-applications-with-the-puma-web-server).
+Use a high performance web server like [Puma](https://github.com/puma/puma).
 
 Use [Rack::Deflater](https://www.schneems.com/2017/11/08/80-smaller-rails-footprint-with-rack-deflate/) for compression.
 
@@ -91,7 +91,7 @@ Add UTM parameters to links.
 
 ## Caching and Performance
 
-Use [Memcached](https://memcached.org/) and [Dalli](https://github.com/mperham/dalli) for caching.
+Use [Memcached](https://memcached.org/) and [Dalli](https://github.com/petergoldstein/dalli) for caching.
 
 ```ruby
 config.cache_store = :dalli_store
@@ -120,7 +120,7 @@ Use an uptime monitoring service like [Pingdom](https://www.pingdom.com/) or [Up
 The database is a common bottleneck for Rails apps and deserves some special monitoring attention. There are some dedicated tools for this:
 
 - If you use Postgres, [PgHero](https://github.com/ankane/pghero) can help identify issues
-- Use [Marginalia](https://github.com/basecamp/marginalia) to track the origin of SQL queries
+- Use [Active Record Query Logs](https://api.rubyonrails.org/classes/ActiveRecord/QueryLogs.html) (Rails 7+) or [Marginalia](https://github.com/basecamp/marginalia) (Rails < 7) to track the origin of SQL queries
 
 ### Notable Events
 
