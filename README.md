@@ -47,9 +47,7 @@ Use [Strong Migrations](https://github.com/ankane/strong_migrations) to catch un
 
 ## Web Requests
 
-Use a high performance web server like [Puma](https://github.com/puma/puma).
-
-Use [Rack::Deflater](https://www.schneems.com/2017/11/08/80-smaller-rails-footprint-with-rack-deflate/) for compression.
+Use compression. If not using a reverse proxy like nginx, use [Rack::Deflater](https://www.schneems.com/2017/11/08/80-smaller-rails-footprint-with-rack-deflate/).
 
 Use a [CDN](https://en.wikipedia.org/wiki/Content_delivery_network) like [Amazon CloudFront](https://aws.amazon.com/cloudfront/) to serve assets.
 
@@ -75,9 +73,7 @@ BadJob.disable!
 
 ## Email
 
-For transactional emails, use an email delivery service like [SendGrid](https://sendgrid.com/).
-
-For marketing emails, use a service like [MailChimp](https://mailchimp.com/).
+Use an email delivery service like [Postmark](https://postmarkapp.com/).
 
 For styling, use a CSS inliner like [Roadie](https://github.com/Mange/roadie-rails).
 
@@ -94,16 +90,14 @@ Add UTM parameters to links.
 Use [Memcached](https://memcached.org/) and [Dalli](https://github.com/petergoldstein/dalli) for caching.
 
 ```ruby
-config.cache_store = :dalli_store
+config.cache_store = :mem_cache_store
 ```
 
-Use a library like [Memoist](https://github.com/matthewrudy/memoist) for memoizing.
+Use a library like [MemoWise](https://github.com/panorama-ed/memo_wise) for memoizing.
 
 ```ruby
-memoize :time_consuming_method
+memo_wise :time_consuming_method
 ```
-
-Add [Oj](https://github.com/ohler55/oj) to speed up JSON parsing.
 
 ## Monitoring
 
@@ -120,7 +114,7 @@ Use an uptime monitoring service like [Pingdom](https://www.pingdom.com/) or [Up
 The database is a common bottleneck for Rails apps and deserves some special monitoring attention. There are some dedicated tools for this:
 
 - If you use Postgres, [PgHero](https://github.com/ankane/pghero) can help identify issues
-- Use [Active Record Query Logs](https://api.rubyonrails.org/classes/ActiveRecord/QueryLogs.html) (Rails 7+) or [Marginalia](https://github.com/basecamp/marginalia) (Rails < 7) to track the origin of SQL queries
+- Use [Active Record Query Logs](https://api.rubyonrails.org/classes/ActiveRecord/QueryLogs.html) to track the origin of SQL queries
 
 ### Notable Events
 
