@@ -6,7 +6,7 @@
 
 ## Codebase
 
-Keep the [majestic monolith](https://m.signalvnoise.com/the-majestic-monolith-29166d022228) as long as possible. Spend a good amount of time fixing pain (app boot times and test times are common sources). [Microservices](https://martinfowler.com/articles/microservices.html) or multiple [self-contained systems](https://scs-architecture.org/) add a huge amount of complexity.
+Keep the [majestic monolith](https://signalvnoise.com/svn3/the-majestic-monolith/) as long as possible. Spend a good amount of time fixing pain (app boot times and test times are common sources). [Microservices](https://martinfowler.com/articles/microservices.html) or multiple [self-contained systems](https://scs-architecture.org/) add a huge amount of complexity.
 
 Assign different teams as owners for different parts of the code for things like triaging errors. **Do not** discourge other teams from working in that part of the code. [Ownership](https://github.com/ankane/ownership) can help with this.
 
@@ -18,11 +18,11 @@ Max out your existing technologies before introducing new ones. Even if your cur
 
 The database is often the primary bottleneck when scaling.
 
-- See which queries take the most total time. If you use PostgreSQL, [PgHero](https://github.com/ankane/pghero) can help. [Marginalia](https://github.com/basecamp/marginalia) can help identify their origin.
+- See which queries take the most total time. If you use PostgreSQL, [PgHero](https://github.com/ankane/pghero) can help. [Active Record Query Logs](https://api.rubyonrails.org/classes/ActiveRecord/QueryLogs.html) can help identify their origin.
 - Scale reads out by fixing n+1 queries, caching frequent queries, and using read replicas. Use [Distribute Reads](https://github.com/ankane/distribute_reads) for replicas.
-- Scale writes with separate databases. Use [Multiverse](https://github.com/ankane/multiverse) for seperate databases.
+- Scale writes with separate databases.
 - Scale space with separate database or partitioning. For Postgres, [pgslice](https://github.com/ankane/pgslice) can help with partitioning.
-- Scale connections with a connection pooler. For Postgres, use [PgBouncer](https://github.com/ankane/shorts/blob/master/PgBouncer-Setup.md).
+- Scale connections with a connection pooler. For Postgres, use [PgBouncer](https://ankane.org/pgbouncer-setup).
 
 ## Background Jobs
 
