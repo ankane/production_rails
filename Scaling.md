@@ -18,7 +18,7 @@ Max out your existing technologies before introducing new ones. Even if your cur
 
 The database is often the primary bottleneck when scaling.
 
-- See which queries take the most total time. If you use PostgreSQL, [PgHero](https://github.com/ankane/pghero) can help. [Active Record Query Logs](https://api.rubyonrails.org/classes/ActiveRecord/QueryLogs.html) can help identify their origin.
+- See which queries take the most total time. If you use PostgreSQL, [PgHero](https://github.com/ankane/pghero) can help. [Query logs](https://api.rubyonrails.org/classes/ActiveRecord/QueryLogs.html) can help identify their origin.
 - Scale reads out by fixing n+1 queries, caching frequent queries, and using read replicas. Use [Distribute Reads](https://github.com/ankane/distribute_reads) for replicas.
 - Scale writes with separate databases.
 - Scale space with separate database or partitioning. For Postgres, [pgslice](https://github.com/ankane/pgslice) can help with partitioning.
