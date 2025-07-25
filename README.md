@@ -75,15 +75,19 @@ BadJob.disable!
 
 Use an email delivery service. You can use one that supports both transactional and marketing email like [Postmark](https://postmarkapp.com/), or separate ones for each type.
 
-For styling, use a CSS inliner like [Roadie](https://github.com/Mange/roadie-rails).
+Use [Ahoy Email](https://github.com/ankane/ahoy_email) for message history.
+
+```ruby
+AhoyEmail.default_options[:message] = true
+```
+
+Use a CSS inliner like [Roadie](https://github.com/Mange/roadie-rails) for styling.
 
 ```ruby
 class ApplicationMailer < ActionMailer::Base
   include Roadie::Rails::Automatic
 end
 ```
-
-Add UTM parameters to links.
 
 ## Caching and Performance
 
