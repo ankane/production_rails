@@ -20,10 +20,6 @@ Use [ruby-prof](https://github.com/ruby-prof/ruby-prof) to profile code.
 
 Use [Bullet](https://github.com/flyerhzm/bullet) to find n + 1 queries.
 
-## Console
-
-Use [Awesome Print](https://github.com/michaeldv/awesome_print) or [pry-rails](https://github.com/rweng/pry-rails) for a friendlier console.
-
 ## Logging
 
 Use [Cacheflow](https://github.com/ankane/cacheflow) to instrument caches.
