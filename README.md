@@ -73,7 +73,7 @@ BadJob.disable!
 
 ## Email
 
-Use an email delivery service like [Postmark](https://postmarkapp.com/).
+Use an email delivery service. Use one that supports both transactional and marketing email like [Postmark](https://postmarkapp.com/), or separate ones for each.
 
 For styling, use a CSS inliner like [Roadie](https://github.com/Mange/roadie-rails).
 
