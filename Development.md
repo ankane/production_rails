@@ -8,7 +8,7 @@ Always, always manually test what you’re building in development. It’s extre
 
 ## Environment
 
-Use [dotenv-rails](https://github.com/bkeepers/dotenv) for environment variables. Do not check this in. Create a `.env.example` without secrets.
+Use [dotenv](https://github.com/bkeepers/dotenv) for environment variables. Do not check this in. Create a `.env.example` without secrets.
 
 Use [Foreman](https://github.com/ddollar/foreman) to manage multiple processes.
 
