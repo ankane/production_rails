@@ -55,7 +55,7 @@ Use [Slowpoke](https://github.com/ankane/slowpoke) for request timeouts.
 
 ## Background Jobs
 
-Use a high performance background processing framework like [Sidekiq](https://github.com/mperham/sidekiq) with Active Job.
+Use a high performance background processing framework like [Sidekiq](https://github.com/sidekiq/sidekiq) with Active Job.
 
 ```ruby
 config.active_job.queue_adapter = :sidekiq
