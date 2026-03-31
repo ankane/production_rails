@@ -16,7 +16,7 @@ Use [Safely](https://github.com/ankane/safely) to rescue and report exceptions i
 
 ## Logging
 
-Use a centralized logging service like [Mezmo](https://www.mezmo.com/).
+Use a centralized logging service like [Papertrail](https://www.papertrail.com/).
 
 Use [Lograge](https://github.com/roidrage/lograge) to reduce volume. Configure it to add `request_id`, `user_id`, and `params`.
 
