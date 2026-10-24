@@ -30,7 +30,7 @@ Use [Letter Opener](https://github.com/ryanb/letter_opener) for email.
 
 ## Data
 
-Use a tool like [pgsync](https://github.com/ankane/pgsync) to sync data from another enviroment.
+Use a tool like [pgsync](https://github.com/ankane/pgsync) to sync data from another environment.
 
 ## Aliases
 
