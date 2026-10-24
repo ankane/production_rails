@@ -8,7 +8,7 @@
 
 Keep the [majestic monolith](https://signalvnoise.com/svn3/the-majestic-monolith/) as long as possible. Spend a good amount of time fixing pain (app boot times and test times are common sources). [Microservices](https://martinfowler.com/articles/microservices.html) or multiple [self-contained systems](https://scs-architecture.org/) add a huge amount of complexity.
 
-Assign different teams as owners for different parts of the code for things like triaging errors. **Do not** discourge other teams from working in that part of the code. [Ownership](https://github.com/ankane/ownership) can help with this.
+Assign different teams as owners for different parts of the code for things like triaging errors. **Do not** discourage other teams from working in that part of the code. [Ownership](https://github.com/ankane/ownership) can help with this.
 
 ## Technology
 
